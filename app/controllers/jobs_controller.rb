@@ -19,7 +19,6 @@ class JobsController < ApplicationController
       render :new
     end
   end
-
   def show
     @job = Job.find(params[:id])
   end
@@ -42,3 +41,11 @@ class JobsController < ApplicationController
     params.require(:job).permit(:title, :description, :level_of_interest, :city)
   end
 end
+
+
+
+
+
+
+
+# 8022792009
