@@ -27,8 +27,15 @@ describe 'Visitor' do
 
     message = "More blah"
 
-    fill_in :comment, with: message
-    click_on("Add Comment")
+    fill_in "comment[message]", with: message
+    click_on("Create Comment")
+
+    expect(current_path).to eq(job_path(job_1))
+    expect(page).to have_content(message)
+  end
+
+  it 'user can view comments in order of most recently created' do
+    
   end
 
 end
