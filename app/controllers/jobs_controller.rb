@@ -3,12 +3,8 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :destroy, :edit, :update]
 
   def index
-    # if params[:company_id]
-      @company = Company.find(params[:company_id])
-      @jobs = @company.jobs
-    # elsif params[:city]
-    #   @jobs = Job.where(city: params[:city]).includes(:companies)
-    # end
+    @company = Company.find(params[:company_id])
+    @jobs = @company.jobs
   end
 
   def new
@@ -26,6 +22,7 @@ class JobsController < ApplicationController
       render :new
     end
   end
+
   def show
     @job = Job.find(params[:id])
   end
@@ -33,7 +30,6 @@ class JobsController < ApplicationController
   def edit
     # implement on your own!
     @job = Job.find(params[:id])
-    # binding.pry
     @company = Company.find(@job.company_id)
   end
 
@@ -45,6 +41,8 @@ class JobsController < ApplicationController
 
   def destroy
     # implement on your own!
+    @job.destroy
+    redirect_to company_jobs_path(@job.company_id)
   end
 
   private
