@@ -1,7 +1,11 @@
 class JobsController < ApplicationController
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
+    # if params[:company_id]
+      @company = Company.find(params[:company_id])
+      @jobs = @company.jobs
+    # elsif params[:city]
+    #   @jobs = Job.where(city: params[:city]).includes(:companies)
+    # end
   end
 
   def new
@@ -25,6 +29,8 @@ class JobsController < ApplicationController
 
   def edit
     # implement on your own!
+    @job = Job.find(params[:id])
+    @company = Company.find(@job.company_id)
   end
 
   def update
