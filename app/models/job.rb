@@ -15,4 +15,12 @@ class Job < ApplicationRecord
   def self.by_city
     group(:city).count
   end
+
+  def self.sort(attribute)
+    if attribute == 'location'
+      order(city: :asc)
+    elsif attribute == 'interest'
+      order(level_of_interest: :desc)
+    end
+  end
 end
