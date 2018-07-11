@@ -9,3 +9,10 @@ All Jobs for <strong><%= @company.name %></strong>
     </div>
   <% end %>
 </ul>
+<ul>
+<% @company.contacts.each do |contact| %>
+    <li><%= contact.name %></li>
+    <li><%= contact.position %></li>
+    <li><%= contact.email %></li>
+<% end %>
+</ul>
