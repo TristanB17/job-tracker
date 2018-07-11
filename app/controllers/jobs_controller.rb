@@ -35,6 +35,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @ordered_comments = @job.order_comments
     @comment = @job.comments.new
+    @category = Category.find(@job.category_id)
   end
 
   def edit

@@ -17,7 +17,7 @@
         <div class="card-block">
           <h4 class="card-title">Top Companies <br>by Interest Level</h4>
             <% @companies_by_job_interest.each do |company| %>
-            <p class="card-subtitle text-muted"><%= company.name %>: <%= company.average_interest_level %></p><br>
+            <p class="card-subtitle text-muted"><%= link_to company.name, company_path(company) %>: <%= company.average_interest_level %></p><br>
           <% end %>
         </div>
       </div>
