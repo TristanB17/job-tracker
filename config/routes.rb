@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :jobs
     resources :contacts, only: [:create, :new, :destroy]
   end
-  resources :jobs, only: [:show, :edit, :new, :destroy]
+  resources :jobs, only: [:show, :edit, :new, :destroy] do
+    resources :comments, only: [:create]
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

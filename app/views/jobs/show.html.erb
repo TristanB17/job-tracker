@@ -11,3 +11,13 @@ City: <%= @job.city %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+<%= render partial:"commentform" %>
+
+Comments:
+<ul>
+  <% @ordered_comments.each do |comment| %>
+    <li>Comment last updated: <%= comment.updated_at %> </li>
+    <li>Comment: <%= comment.message %> </li>
+  <% end %>
+</ul>
