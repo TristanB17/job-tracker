@@ -5,7 +5,7 @@
     <div class="col";>
       <div class="card">
         <div class="card-block">
-          <h4 class="card-title">Number of Jobs by Interest Level</h4><br>
+          <h4 class="card-title">Number of Jobs <br> by Interest Level</h4><br>
           <% @jobs_by_interest.each_pair do |key, value| %>
             <p class="card-subtitle text-muted"><%= key %>: <%= value %></p></br>
           <% end %>
@@ -13,16 +13,24 @@
       </div>
     </div>
     <div class="col">
-      <h4>Top Companies by Interest Level</h4>
-      <% @companies_by_job_interest.each do |company| %>
-      <%= company.name %>: <%= company.average_interest_level %><br>
-      <% end %>
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Top Companies <br>by Interest Level</h4>
+            <% @companies_by_job_interest.each do |company| %>
+            <p class="card-subtitle text-muted"><%= company.name %>: <%= company.average_interest_level %></p><br>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="col">
-      <h4>Jobs by City</h4>
-      <% @jobs_by_city.each_pair do |key, value| %>
-      <a href="/jobs?location=<%= key %>"> <%= key %></a>: <%= value %><br>
-      <% end %>
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Jobs by City</h4>
+          <% @jobs_by_city.each_pair do |key, value| %>
+            <a class="card-subtitle text-muted" href="/jobs?location=<%= key %>"> <%= key %></a>: <%= value %><br><br>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -33,6 +33,24 @@ nav a:hover {
   /* background-color: #74F6FF; */
 }
 
+.card-block {
+  border-width: 5px;
+}
+
+.card-block {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+h4.card-title {
+  padding: 10px;
+}
+
 p.card-subtitle {
   padding-left: 2em;
+}
+
+a.card-subtitle {
+  padding-left: 2em;
+  color: blue;
 }
