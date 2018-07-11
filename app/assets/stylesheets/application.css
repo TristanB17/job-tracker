@@ -54,8 +54,12 @@ p.card-subtitle {
 a.card-subtitle {
   padding-left: 2em;
   color: blue;
+}
 
 .hidden {
   visibility: hidden;
+}
 
+body {
+  background-color :#b3c2d8;
 }

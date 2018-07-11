@@ -38,7 +38,6 @@ class JobsController < ApplicationController
   end
 
   def edit
-    # implement on your own!
     @job = Job.find(params[:id])
     @company = Company.find(@job.company_id)
   end
