@@ -32,3 +32,7 @@ nav a:hover {
 .container {
   /* background-color: #74F6FF; */
 }
+
+p.card-subtitle {
+  padding-left: 2em;
+}

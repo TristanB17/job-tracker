@@ -3,10 +3,14 @@
 <div class="container">
   <div class="row">
     <div class="col";>
-      <h4>Number of Jobs by Interest Level</h4>
-      <% @jobs_by_interest.each_pair do |key, value| %>
-      <p><%= key %>: <%= value %></p>
-      <% end %>
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Number of Jobs by Interest Level</h4><br>
+          <% @jobs_by_interest.each_pair do |key, value| %>
+            <p class="card-subtitle text-muted"><%= key %>: <%= value %></p></br>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="col">
       <h4>Top Companies by Interest Level</h4>
