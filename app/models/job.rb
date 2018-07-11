@@ -9,6 +9,8 @@ class Job < ApplicationRecord
   end
 
   def self.by_interest_level
-    order(:level_of_interest).group(:id)
+    group(:level_of_interest).count
   end
+
+  
 end

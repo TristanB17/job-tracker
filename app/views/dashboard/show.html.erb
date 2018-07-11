@@ -1,0 +1,11 @@
+<h1>Dashboard</h1>
+
+<h3>Interest Level</h3>
+<% @jobs_by_interest.each_pair do |key, value| %>
+  <p><%= key %>: <%= value %></p>
+<% end %>
+
+<h3>Top 3 Companies by Job Interest Level</h3>
+<% @companies_by_job_interest.each do |company| %>
+  <%= company.name %>: <%= company.average_interest_level %>
+<% end %>
