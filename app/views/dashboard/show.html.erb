@@ -12,5 +12,5 @@
 
 <h3>Jobs by City</h3>
 <% @jobs_by_city.each_pair do |key, value| %>
-  <%= link_to "#{key}", "/jobs?location=#{key}" %>: <%= value %>
+  <a href="/jobs?location=<%= key %>"> <%= key %></a>: <%= value %>
 <% end %>
