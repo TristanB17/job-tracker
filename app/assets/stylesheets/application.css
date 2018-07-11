@@ -59,3 +59,7 @@ a.card-subtitle {
 .hidden {
   visibility: hidden;
 }
+
+body {
+  background-color :#b3c2d8;
+}

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'companies#index'
   resources :companies do
     resources :jobs
-    resources :contacts, only: [:create, :new, :destroy]
+    resources :contacts, only: [:create, :new, :destroy, :edit]
   end
   resources :jobs, only: [:index, :show, :edit, :new, :destroy] do
     resources :comments, only: [:create]
