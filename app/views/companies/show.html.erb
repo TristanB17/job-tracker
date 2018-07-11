@@ -9,9 +9,11 @@ All Jobs for <strong><%= @company.name %></strong>
 </ul>
 <h2>Company contacts: </h2>
 <ul>
+<h2>Contacts:</h2>
 <% @company.contacts.each do |contact| %>
-    <li><%= contact.name %></li>
-    <li><%= contact.position %></li>
-    <li><%= contact.email %></li>
+  <li>Name: <%= contact.name %></li>
+  <li>Position: <%= contact.position %></li>
+  <li>Email Address: <%= contact.email %></li>
 <% end %>
+<%= link_to "Create New Contact", new_company_contact(@company) %>
 </ul>
