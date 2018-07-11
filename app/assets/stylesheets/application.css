@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 h4.container {
   font-family: 'Open Sans', sans-serif;
 }
@@ -53,4 +54,8 @@ p.card-subtitle {
 a.card-subtitle {
   padding-left: 2em;
   color: blue;
+
+.hidden {
+  visibility: hidden;
+
 }
