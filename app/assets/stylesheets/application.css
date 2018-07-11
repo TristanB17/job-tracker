@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+h4.container {
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+  background-color: #529BBF;
+}
+
+nav a {
+  color: black;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+.container {
+  /* background-color: #74F6FF; */
+}
