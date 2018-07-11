@@ -9,3 +9,8 @@
 <% @companies_by_job_interest.each do |company| %>
   <%= company.name %>: <%= company.average_interest_level %>
 <% end %>
+
+<h3>Jobs by City</h3>
+<% @jobs_by_city.each_pair do |key, value| %>
+  <%= link_to "#{key}", "/jobs?location=#{key}" %>: <%= value %>
+<% end %>
