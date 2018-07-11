@@ -7,4 +7,8 @@ class Job < ApplicationRecord
   def order_comments
     comments.order(updated_at: :desc)
   end
+
+  def self.by_interest_level
+    order(:level_of_interest).group(:id)
+  end
 end

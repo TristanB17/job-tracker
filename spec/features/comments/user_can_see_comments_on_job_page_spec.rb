@@ -37,9 +37,4 @@ describe 'Visitor' do
     expect(current_path).to eq(job_path(job_1))
     expect(page).to have_content(message)
   end
-
-  it 'user can view comments in order of most recently created' do
-
-  end
-
 end

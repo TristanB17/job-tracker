@@ -15,4 +15,44 @@ describe Job do
     it {should belong_to(:company)}
     it {should belong_to(:category)}
   end
+
+  describe 'calculations' do
+    it 'finds all jobs with same level of interest' do
+      company = Company.create(name: 'WHELP!')
+      category = Category.create(title: 'Namekian')
+      job_1 = Job.create!(title: 'Developer',
+                         description: 'something',
+                         level_of_interest: 5,
+                         company_id: company.id,
+                         category_id: 1,
+                         city: "Moscow")
+      job_2 = Job.create!(title: 'Another Dev',
+                         description: 'something',
+                         level_of_interest: 5,
+                         company_id: 1,
+                         category_id: category.id,
+                         city: "Moscow")
+      job_3 = Job.create!(title: 'Ombudsman',
+                         description: 'something else',
+                         level_of_interest: 4,
+                         company_id: 1,
+                         category_id: 1,
+                         city: "Moscow")
+      job_4 = Job.create!(title: 'Sven',
+                         description: 'Sweden',
+                         level_of_interest: 4,
+                         company_id: 1,
+                         category_id: 1,
+                         city: "Moscow")
+      job_5 = Job.create!(title: 'Another Pev',
+                         description: 'something',
+                         level_of_interest: 3,
+                         company_id: 1,
+                         category_id: 1,
+                         city: "Moscow")
+
+      jobs_by_interest_level = 3
+      expect(jobs_by_interest_level).to eq(Job.by_interest_level)
+    end
+  end
 end
