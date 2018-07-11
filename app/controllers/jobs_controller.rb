@@ -7,7 +7,8 @@ class JobsController < ApplicationController
       @jobs = @company.jobs
     elsif params[:location]
       @jobs = Job.where(city: params[:location])
-      render :index
+    elsif params[:sort]
+      @jobs = Job.sort(params[:sort])
     else
       @jobs = Job.all
     end

@@ -1,6 +1,9 @@
 <% @jobs.each do |job| %>
   <div id="job-<%= job.id %>">
     <li><strong><%= job.title %></strong></li>
+    <li><%= job.city %></li>
+    <li><%= job.level_of_interest %></li>
+
     <li><%= link_to "Edit", edit_job_path(job) %> </li>
     <li><%= link_to "Delete", job_path(job), method: 'delete', id: "delete-#{job.id}" %> </li>
   </div>
