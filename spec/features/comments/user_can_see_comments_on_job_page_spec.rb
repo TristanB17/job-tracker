@@ -3,10 +3,12 @@ require 'rails_helper'
 describe 'Visitor' do
 
   it 'user can see a comment on job page' do
-    company = Company.create(name: "Turing")
-    job_1 = company.jobs.create(title: 'Dev',
+    company = Company.create(name: "ESPN")
+    category = Category.create(title: "asdf")
+    job_1 = company.jobs.create(title: 'Developer',
                        description: 'something',
                        level_of_interest: 5,
+                       category_id: category.id,
                        city: "Moscow")
     comment_1 = job_1.comments.create(message: "Blah")
 
@@ -16,10 +18,12 @@ describe 'Visitor' do
   end
 
   it 'user can add a comment from job page' do
-    company = Company.create(name: "Turing")
-    job_1 = company.jobs.create(title: 'Dev',
+    company = Company.create(name: "ESPN")
+    category = Category.create(title: "asdf")
+    job_1 = company.jobs.create(title: 'Developer',
                        description: 'something',
                        level_of_interest: 5,
+                       category_id: category.id,
                        city: "Moscow")
     comment_1 = job_1.comments.create(message: "Blah")
 
@@ -35,7 +39,7 @@ describe 'Visitor' do
   end
 
   it 'user can view comments in order of most recently created' do
-    
+
   end
 
 end

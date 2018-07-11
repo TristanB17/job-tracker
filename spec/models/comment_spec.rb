@@ -19,11 +19,13 @@ describe Comment do
   end
   describe 'Methods' do
     it 'can order comments by date created' do
-      company = Company.create(name: "Turing")
-      job_1 = company.jobs.create(title: 'Dev',
-                       description: 'something',
-                       level_of_interest: 5,
-                       city: "Moscow")
+      company = Company.create(name: "ESPN")
+      category = Category.create(title: "asdf")
+      job_1 = company.jobs.create(title: 'Developer',
+                         description: 'something',
+                         level_of_interest: 5,
+                         category_id: category.id,
+                         city: "Moscow")
       comment_1 = job_1.comments.create(message: "Blah")
       comment_2 = job_1.comments.create(message: "This is first")
 
