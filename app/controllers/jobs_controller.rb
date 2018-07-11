@@ -2,8 +2,16 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :destroy, :edit, :update]
 
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
+    if params[:company_id]
+      @company = Company.find(params[:company_id])
+      @jobs = @company.jobs
+    elsif params[:location]
+      @jobs = Job.where(city: params[:location])
+      render :index
+    else
+      @jobs = Job.all
+    end
+
   end
 
   def new
