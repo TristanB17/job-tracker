@@ -1,4 +1,8 @@
-All Jobs for <strong><%= @company.name %></strong>
+<h4>All Jobs for <strong><%= @company.name %></strong></h4>
+
+<section>
+  <%= link_to "Create a Job", new_company_job_path(@company.id), class:"btn btn-primary" %>
+</section>
 
 <ul>
   <% @company.jobs.each do |job| %>
@@ -9,6 +13,7 @@ All Jobs for <strong><%= @company.name %></strong>
     </div>
   <% end %>
 </ul>
+<h4>Contacts:</h4>
 <ul>
 <% @company.contacts.each do |contact| %>
     <li><%= contact.name %></li>
