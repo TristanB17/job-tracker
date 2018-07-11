@@ -13,6 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+h4.container {
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+  background-color: #529BBF;
+}
+
+nav a {
+  color: black;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+.container {
+  /* background-color: #74F6FF; */
+}
+
+.card-block {
+  border-width: 5px;
+}
+
+.card-block {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+h4.card-title {
+  padding: 10px;
+}
+
+p.card-subtitle {
+  padding-left: 2em;
+}
+
+a.card-subtitle {
+  padding-left: 2em;
+  color: blue;
+
 .hidden {
   visibility: hidden;
+
 }

@@ -1,16 +1,36 @@
 <h1>Dashboard</h1>
 
-<h3>Interest Level</h3>
-<% @jobs_by_interest.each_pair do |key, value| %>
-  <p><%= key %>: <%= value %></p>
-<% end %>
-
-<h3>Top 3 Companies by Job Interest Level</h3>
-<% @companies_by_job_interest.each do |company| %>
-  <%= company.name %>: <%= company.average_interest_level %>
-<% end %>
-
-<h3>Jobs by City</h3>
-<% @jobs_by_city.each_pair do |key, value| %>
-  <a href="/jobs?location=<%= key %>"> <%= key %></a>: <%= value %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col";>
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Number of Jobs <br> by Interest Level</h4><br>
+          <% @jobs_by_interest.each_pair do |key, value| %>
+            <p class="card-subtitle text-muted"><%= key %>: <%= value %></p></br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Top Companies <br>by Interest Level</h4>
+            <% @companies_by_job_interest.each do |company| %>
+            <p class="card-subtitle text-muted"><%= company.name %>: <%= company.average_interest_level %></p><br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Jobs by City</h4>
+          <% @jobs_by_city.each_pair do |key, value| %>
+            <a class="card-subtitle text-muted" href="/jobs?location=<%= key %>"> <%= key %></a>: <%= value %><br><br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
