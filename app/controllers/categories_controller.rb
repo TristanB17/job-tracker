@@ -19,9 +19,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    if @category.save
-    else
-    end
+    @jobs = Job.where(category_id: @category.id)
   end
 
   def edit
