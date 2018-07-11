@@ -8,7 +8,7 @@ All Jobs for <strong><%= @company.name %></strong>
     <li><%= link_to "Delete", job(job), method: 'delete', id: "delete-#{job.id}" %> </li>
   <% end %>
 </ul>
-<h2>Company contacts: </h2>
+<%= link_to "Create New Contact", new_company_contact(@company) %>
 <ul>
 <h2>Contacts:</h2>
 <% @company.contacts.each do |contact| %>
@@ -16,5 +16,4 @@ All Jobs for <strong><%= @company.name %></strong>
   <li>Position: <%= contact.position %></li>
   <li>Email Address: <%= contact.email %></li>
 <% end %>
-<%= link_to "Create New Contact", new_company_contact(@company) %>
 </ul>
