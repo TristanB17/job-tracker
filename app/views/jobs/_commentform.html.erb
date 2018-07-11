@@ -1,5 +1,7 @@
 <%= form_for [@job, @comment] do |f| %>
-  <%= f.label :message %>
-  <%= f.text_field :message %>
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_field :message, :required => true %>
+  </div>
   <%= f.submit %>
 <% end %>
